@@ -6,7 +6,7 @@
 /*   By: jolecomt <jolecomt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 15:11:24 by jolecomt          #+#    #+#             */
-/*   Updated: 2024/03/18 15:29:36 by jolecomt         ###   ########.fr       */
+/*   Updated: 2024/03/20 15:32:57 by jolecomt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,17 @@ int main(void)
         Phonebook my_phonebook;
         std::string     entry;
         
-	std::cout<<"ADD | SEARCH | EXIT >";
-        std::getline(std::cin, entry);
-        std::cout<<entry<<std::endl;
-        while (entry.compare("EXIT") != 0)
+        while (1)
         {
-                if (entry.compare("ADD") == 0)
-                        my_phonebook.add_contact();
-                else if(entry.compare("SEARCH") == 0)
-                        my_phonebook.print_contact(my_phonebook.search_contact());
-                std::cout<<"smtgs"<<std::endl;
+                std::cout<<"ADD | SEARCH | EXIT >";
                 std::getline(std::cin, entry);
                 std::cout<<entry<<std::endl;
+                if (entry.compare("EXIT") == 0)
+                        break ;
+                else if (entry.compare("ADD") == 0)
+                        my_phonebook.add_contact();
+                else if(entry.compare("SEARCH") == 0)
+                        my_phonebook.search_contact();
         }
          // c1.set_name("first", 0);        
         // c1.set_name("last", 1);        

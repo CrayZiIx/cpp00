@@ -6,7 +6,7 @@
 /*   By: jolecomt <jolecomt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 15:13:36 by jolecomt          #+#    #+#             */
-/*   Updated: 2024/03/14 16:07:09 by jolecomt         ###   ########.fr       */
+/*   Updated: 2024/03/20 17:51:27 by jolecomt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <string>
 #include <iostream>
+
+# define CONTACT_MAX 2
 
 class Contact
 {
@@ -27,8 +29,8 @@ class Contact
         public:
                 Contact();
                 ~Contact();
-                void set_entry(std::string, int entry_id);
-                std::string get_entry(int entry_id);
+                void            set_entry(std::string, int entry_id);
+                std::string     get_entry(int entry_id);
 };
 
 #endif
