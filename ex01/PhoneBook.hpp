@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jolecomt <jolecomt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 15:11:36 by jolecomt          #+#    #+#             */
-/*   Updated: 2024/03/20 20:47:19 by jolecomt         ###   ########.fr       */
+/*   Updated: 2024/03/21 11:59:43 by jolecomt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,11 @@
 #include <iomanip>
 #include <string>
 #include <sstream>
-#include "contact.hpp"
+#include "Contact.hpp"
+
+#ifndef CONTACT_MAX
+# define CONTACT_MAX 8
+#endif
 
 class Phonebook
 {
@@ -30,11 +34,7 @@ class Phonebook
 		~Phonebook();
 		void	add_contact();
 		void    print_contact(Contact user);
-		void	search_contact();
-
-
-		
-		
+		void	search_contact();	
 };
 
 

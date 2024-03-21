@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jolecomt <jolecomt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 15:34:16 by jolecomt          #+#    #+#             */
-/*   Updated: 2024/03/20 21:11:23 by jolecomt         ###   ########.fr       */
+/*   Updated: 2024/03/21 11:59:40 by jolecomt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
 Phonebook::Phonebook()
 {
@@ -93,8 +93,6 @@ void Phonebook::search_contact()
 	std::string lname;
 	std::string nname;
 
-
-	// print each contact
 	std::cout<<"---------------------------------------------"<<std::endl;
 	std::cout<<"|                 PHONEBOOK                 |"<<std::endl;
 	std::cout<<"---------------------------------------------"<<std::endl;
@@ -138,7 +136,6 @@ void Phonebook::search_contact()
 			input_user_int = -1;
 		else
 			str_stream >> input_user_int;
-		std::cout << this->index_contact << std::endl;
 		while (str_stream.fail()|| input_user_int < 0 || input_user_int >= this->index_contact_max)
 		{
 			std::cout<<"RETRY INDEX OF CONTACT >";
@@ -149,8 +146,6 @@ void Phonebook::search_contact()
 				input_user_int = -1;
 			else
 				str_stream >> input_user_int;
-			std::cout << this->index_contact << std::endl;
-			std::cout<<input_user_int<<std::endl;
 		}
 		this->print_contact(this->contacts[input_user_int]);
 	}

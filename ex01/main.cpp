@@ -6,13 +6,13 @@
 /*   By: jolecomt <jolecomt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 15:11:24 by jolecomt          #+#    #+#             */
-/*   Updated: 2024/03/20 20:47:25 by jolecomt         ###   ########.fr       */
+/*   Updated: 2024/03/21 11:59:50 by jolecomt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "contact.hpp"
-#include "phonebook.hpp"
+#include "Contact.hpp"
+#include "PhoneBook.hpp"
 
 int main(void)
 {
@@ -36,4 +36,5 @@ int main(void)
                 else if(entry.compare("SEARCH") == 0)
                         my_phonebook.search_contact();
         }
+        return (0);
 }

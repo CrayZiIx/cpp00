@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jolecomt <jolecomt@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/03/14 14:41:34 by jolecomt          #+#    #+#              #
-#    Updated: 2024/03/21 12:06:21 by jolecomt         ###   ########.fr        #
+#    Created: 2024/03/21 11:50:48 by jolecomt          #+#    #+#              #
+#    Updated: 2024/03/21 12:00:15 by jolecomt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME          = megaphone
+NAME          = phonebook
 INCLUDES      =
 SRC_DIR       =
 OBJ_DIR       = obj/
@@ -18,7 +18,7 @@ OBJ_DIR       = obj/
 CXX           = c++
 CXXFLAGS      = -Wall -Wextra -Werror -std=c++98
 
-SRC_FILES     = Megaphone
+SRC_FILES     = Contact PhoneBook main
 
 SRC           = $(addprefix $(SRC_DIR), $(addsuffix .cpp, $(SRC_FILES)))
 OBJ           = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
