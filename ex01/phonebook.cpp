@@ -6,7 +6,7 @@
 /*   By: jolecomt <jolecomt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 15:34:16 by jolecomt          #+#    #+#             */
-/*   Updated: 2024/03/20 17:58:39 by jolecomt         ###   ########.fr       */
+/*   Updated: 2024/03/20 21:11:23 by jolecomt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,47 +27,56 @@ void Phonebook::add_contact()
 {
 	std::string entry;
 
-	std::cout<<"FIRST_NAME >";
+	std::cout<<"---------------------------------------------"<<std::endl;
+	std::cout<<"|                 PHONEBOOK                 |"<<std::endl;
+	std::cout<<"---------------------------------------------"<<std::endl;
+	std::cout<<"|                ADD CONTACT                |"<<std::endl;
+	std::cout<<"---------------------------------------------"<<std::endl;
+	std::cout<<"| FIRST NAME -> ";
 	std::getline(std::cin, entry);
 	while (entry.empty())
 	{
-		std::cout<<"FIRST_NAME >";
+		std::cout<<"| FIRST NAME -> ";
 		std::getline(std::cin, entry);
 	}
 	this->contacts[this->index_contact].set_entry(entry, 0);
-	std::cout<<"LAST_NAME >";
+	std::cout<<"---------------------------------------------"<<std::endl;
+	std::cout<<"| LAST_NAME -> ";
 	std::getline(std::cin, entry);
 	while (entry.empty())
 	{
-		std::cout<<"LAST_NAME >";
+		std::cout<<"| LAST_NAME -> ";
 		std::getline(std::cin, entry);
 	}
 	this->contacts[this->index_contact].set_entry(entry, 1);
-	std::cout<<"NICK_NAME >";
+	std::cout<<"---------------------------------------------"<<std::endl;
+	std::cout<<"| NICK_NAME -> ";
 	std::getline(std::cin, entry);
 	while (entry.empty())
 	{
-		std::cout<<"NICK_NAME >";
+		std::cout<<"| NICK_NAME -> ";
 		std::getline(std::cin, entry);
 	}
 	this->contacts[this->index_contact].set_entry(entry, 2);
-	std::cout<<"PHONENUMBER >";
+	std::cout<<"---------------------------------------------"<<std::endl;
+	std::cout<<"| PHONENUMBER -> ";
 	std::getline(std::cin, entry);
 	while (entry.empty())
 	{
-		std::cout<<"PHONENUMBER >";
+		std::cout<<"| PHONENUMBER -> ";
 		std::getline(std::cin, entry);
 	}
 	this->contacts[this->index_contact].set_entry(entry, 3);
-	std::cout<<"DARKEST_SECRET >";
+	std::cout<<"---------------------------------------------"<<std::endl;
+	std::cout<<"| DARKEST_SECRET -> ";
 	std::getline(std::cin, entry);
 	while (entry.empty())
 	{
-		std::cout<<"DARKEST_SECRET >";
+		std::cout<<"| DARKEST_SECRET -> ";
 		std::getline(std::cin, entry);
 	}
 	this->contacts[this->index_contact].set_entry(entry, 4);
-	
+	std::cout<<"---------------------------------------------"<<std::endl;
 	this->index_contact++;
 	if (this->index_contact_max < this->index_contact)
 		this->index_contact_max++;
@@ -86,19 +95,21 @@ void Phonebook::search_contact()
 
 
 	// print each contact
+	std::cout<<"---------------------------------------------"<<std::endl;
+	std::cout<<"|                 PHONEBOOK                 |"<<std::endl;
+	std::cout<<"---------------------------------------------"<<std::endl;
 	std::cout<<"|     index|     fname|     lname|     nname|"<<std::endl;
 	std::cout<<"---------------------------------------------"<<std::endl;
 	if (this->index_contact_max == 0)
 		std::cout<<"NO CONTACT IN THE PHONEBOOK"<<std::endl;
 	else
 	{
-
 		while (index_user < this->index_contact_max)
 		{
 			fname = this->contacts[index_user].get_entry(0);
 			lname = this->contacts[index_user].get_entry(1);
 			nname = this->contacts[index_user].get_entry(2);
-			if (fname.length() >=10 )
+			if (fname.length() >= 10 )
 			{
 				fname.resize(9);
 				fname.append(".");
@@ -147,9 +158,15 @@ void Phonebook::search_contact()
 
 void    Phonebook::print_contact(Contact user)
 {
-	std::cout<<user.get_entry(0)<<std::endl;
-	std::cout<<user.get_entry(1)<<std::endl;
-	std::cout<<user.get_entry(2)<<std::endl;
-	std::cout<<user.get_entry(3)<<std::endl;
-	std::cout<<user.get_entry(4)<<std::endl;
+	std::cout<<"---------------------------------------------"<<std::endl;
+	std::cout<<"| FIRST_NAME     |"<<user.get_entry(0)<<"|"<<std::endl;
+	std::cout<<"---------------------------------------------"<<std::endl;
+	std::cout<<"| LAST_NAME      |"<<user.get_entry(1)<<"|"<<std::endl;
+	std::cout<<"---------------------------------------------"<<std::endl;
+	std::cout<<"| NICK_NAME      |"<<user.get_entry(2)<<"|"<<std::endl;
+	std::cout<<"---------------------------------------------"<<std::endl;
+	std::cout<<"| PHONENUMBER    |"<<user.get_entry(3)<<"|"<<std::endl;
+	std::cout<<"---------------------------------------------"<<std::endl;
+	std::cout<<"| DARKEST_SECRET |"<<user.get_entry(4)<<"|"<<std::endl;
+	std::cout<<"---------------------------------------------"<<std::endl;
 }
